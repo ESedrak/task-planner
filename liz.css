@@ -1,0 +1,35 @@
+/* container around the whole code */
+.wrap {
+  max-width: 1200px;
+  margin: 20px auto;
+  border: 1px solid black;
+}
+
+/* header */
+.wrap h1 {
+  text-align: center;
+}
+
+/* Links to addTask Page */
+.col a {
+  text-decoration: none;
+}
+
+.row {
+  border: 1px solid black;
+  padding: 20px;
+  margin: 10px;
+}
+
+/* priority status */
+.lowPriority {
+  color: rgb(93, 211, 93);
+}
+
+.mediumPriority {
+  color: rgb(247, 170, 25);
+}
+
+.highPriority {
+  color: red;
+}
