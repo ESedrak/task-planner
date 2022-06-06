@@ -10,11 +10,16 @@
   text-align: center;
 }
 
+.sub-header {
+  margin: 10px;
+}
+
 /* Links to addTask Page */
-.col a {
+.col-1 a {
   text-decoration: none;
 }
 
+/* for each row */
 .row {
   border: 1px solid black;
   padding: 20px;
@@ -34,6 +39,18 @@
   color: red;
 }
 
-.toDoList button {
+/* Add Task button */
+.toDoList button a {
   margin-right: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+/* Completed List */
+.completedList {
+  margin-top: 50px;
+}
+
+.completedList .row {
+  background-color: rgb(227, 227, 227);
 }
