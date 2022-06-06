@@ -11,7 +11,13 @@
 }
 
 .sub-header {
-  margin: 10px;
+  margin: 20px;
+}
+
+/* add Name category */
+
+.input-group {
+  margin-left: 20px;
 }
 
 /* Links to addTask Page */
@@ -40,8 +46,11 @@
 }
 
 /* Add Task button */
+
+.toDoList button {
+  margin-right: 20px;
+}
 .toDoList button a {
-  margin-right: 10px;
   color: white;
   text-decoration: none;
 }
