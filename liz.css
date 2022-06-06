@@ -20,6 +20,10 @@
   margin-left: 20px;
 }
 
+.input-group-text a {
+  color: rgb(121, 114, 114);
+}
+
 /* Links to addTask Page */
 .col-1 a {
   text-decoration: none;
