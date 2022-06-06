@@ -1,0 +1,94 @@
+/* Index section */
+
+/* container around the whole code */
+.wrap {
+  max-width: 1200px;
+  margin: 20px auto;
+  border: 1px solid black;
+}
+
+/* header */
+.wrap h1 {
+  text-align: center;
+}
+
+.sub-header {
+  margin: 20px;
+}
+
+/* add Name category */
+
+.input-group {
+  margin-left: 20px;
+}
+
+.input-group-text a {
+  color: rgb(121, 114, 114);
+}
+
+/* Links to addTask Page */
+.col-1 a {
+  text-decoration: none;
+}
+
+/* for each row */
+.row {
+  border: 1px solid black;
+  padding: 20px;
+  margin: 10px;
+}
+
+/* priority status */
+.lowPriority {
+  color: rgb(93, 211, 93);
+}
+
+.mediumPriority {
+  color: rgb(247, 170, 25);
+}
+
+.highPriority {
+  color: red;
+}
+
+/* Add Task button */
+
+.toDoList button {
+  margin-left: 20px;
+}
+.toDoList button a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Completed List */
+.completedList {
+  margin-top: 50px;
+}
+
+.completedList .row {
+  background-color: rgb(227, 227, 227);
+}
+
+/* Add Task section */
+#taskFormBox {
+  border: solid 1px black;
+  position: relative;
+  top: 3rem;
+  width: 50rem;
+}
+
+/* #taskFormHeader {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+} */
+
+.navbar-brand {
+  position: absolute;
+}
+
+#taskFormHeader {
+  position: relative;
+  top: 1.5rem;
+}
