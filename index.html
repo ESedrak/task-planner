@@ -16,20 +16,39 @@
   <body>
     <div class="wrap">
       <h1>Task Planner</h1>
-      <span class="sub-header">Collaborators:</span>
-      <div class="input-group w-50">
-        <span class="input-group-text" id="basic-addon1">
-          <a href="addName.html">+</a>
-        </span>
-        <input
-          type="text"
-          class="form-control"
-          value="Elizabeth, Anthony, Riya"
-          aria-label="Input group example"
-          aria-describedby="basic-addon1"
-        />
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <span class="sub-header">Project Name:</span>
+            <div class="input-group w-100">
+              <input
+                type="text"
+                class="form-control"
+                value="Task-Planner"
+                aria-label="Input group example"
+                aria-describedby="basic-addon1"
+              />
+            </div>
+          </div>
+          <div class="col">
+            <span class="sub-header">Collaborators:</span>
+            <div class="input-group w-100">
+              <span class="input-group-text" id="basic-addon1">
+                <a href="addName.html">+</a>
+              </span>
+              <input
+                type="text"
+                class="form-control"
+                value="Elizabeth, Anthony, Riya"
+                aria-label="Input group example"
+                aria-describedby="basic-addon1"
+              />
+            </div>
+          </div>
+        </div>
       </div>
 
+      <!-- To do List -->
       <section class="toDoList">
         <h4 class="sub-header">To Do</h4>
         <div class="container">
@@ -151,13 +170,14 @@
             <div class="col-1"><a href="addTask.html">></a></div>
           </div>
         </div>
-        <button type="button" class="btn btn-secondary float-end">
+        <!-- Add Task Button -->
+        <button type="button" class="btn btn-secondary">
           <a href="./addTask.html">Add Task</a>
         </button>
       </section>
-
+      <hr />
+      <!-- Completed List -->
       <section class="completedList">
-        <hr />
         <h4 class="sub-header">Completed Tasks</h4>
         <div class="row">
           <div class="col-1">
