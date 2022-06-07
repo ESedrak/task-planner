@@ -1,76 +1,84 @@
-/* Index section */
-/* container around the index code */
-.wrap {
-  max-width: 1200px;
-  margin: 20px auto;
-  border: 1px solid black;
+/* index section */
+/* global css */
+body {
+  background-color: #9f86c0;
 }
 
 /* header */
-.wrap h1 {
+h1 {
+  text-align: center;
+  color: white;
+  background-color: #231942;
+}
+
+h4 {
+  color: white;
   text-align: center;
 }
 
-.sub-header {
-  margin: 20px;
+section {
+  margin: 5px auto;
+  background-color: #5e548e;
 }
 
-/* add Name category */
-
-.input-group {
-  margin-left: 20px;
+/* button */
+button {
+  margin: 5px;
 }
 
-.input-group-text a {
-  color: rgb(121, 114, 114);
-}
-
-/* Links to addTask Page */
-.col-1 a {
-  text-decoration: none;
-}
-
-/* for each row in index */
-.wrap .row {
-  border: 1px solid black;
-  padding: 20px;
-  margin: 10px;
-}
-
-/* priority status */
-.lowPriority {
-  color: rgb(93, 211, 93);
-}
-
-.mediumPriority {
-  color: rgb(247, 170, 25);
-}
-
-.highPriority {
-  color: red;
-}
-
-/* Add Task button */
-
-.toDoList button {
-  margin-left: 20px;
-}
-.toDoList button a {
+button a {
   color: white;
   text-decoration: none;
 }
 
-/* Completed List */
-.completedList {
-  margin-top: 50px;
+button a:hover {
+  color: pink;
 }
 
-.completedList .row {
-  background-color: rgb(227, 227, 227);
+.container {
+  max-width: 1300px;
+}
+
+/* each column */
+.toDo {
+  border: 1px solid white;
+  max-width: 300px;
+}
+
+.inProgress {
+  border: 1px solid white;
+  max-width: 300px;
+}
+
+.review {
+  border: 1px solid white;
+  max-width: 300px;
+}
+
+.completed {
+  border: 1px solid white;
+  max-width: 300px;
+}
+
+/* One Task */
+.card {
+  margin: 20px auto;
+  transition: 1s;
+}
+
+.card:hover {
+  background-color: rgb(192, 189, 189);
+  transform: scale(1.1);
+}
+
+/* row */
+.row {
+  margin-bottom: 10px;
 }
 
 /* Add Task section */
-#taskFormBox, #addNameForm {
+#taskFormBox,
+#addNameForm {
   border: solid 1px black;
   position: relative;
   top: 3rem;
