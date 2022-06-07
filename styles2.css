@@ -2,10 +2,24 @@
   max-width: 1300px;
 }
 
-.oneTask {
+.toDo {
   border: 1px solid black;
   max-width: 300px;
-  margin-right: 10px;
+}
+
+.inProgress {
+  border: 1px solid black;
+  max-width: 300px;
+}
+
+.review {
+  border: 1px solid black;
+  max-width: 300px;
+}
+
+.completed {
+  border: 1px solid black;
+  max-width: 300px;
 }
 
 .card {
