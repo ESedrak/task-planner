@@ -79,7 +79,7 @@ button a:hover {
 /* Add Task section */
 #taskFormBox,
 #addNameForm {
-  border: solid 1px black;
+  border: solid 1px white;
   position: relative;
   top: 3rem;
   width: 50rem;
