@@ -1,12 +1,13 @@
 /* global css */
 body {
-  background-color: black;
+  background-color: #9f86c0;
 }
 
 /* header */
 h1 {
   text-align: center;
   color: white;
+  background-color: #231942;
 }
 
 h4 {
@@ -16,6 +17,7 @@ h4 {
 
 section {
   margin: 5px auto;
+  background-color: #5e548e;
 }
 
 /* button */
