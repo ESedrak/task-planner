@@ -1,11 +1,31 @@
+/* header */
 h1 {
   text-align: center;
+}
+
+section {
+  margin: 0 auto;
+}
+
+/* button */
+button {
+  margin: 5px;
+}
+
+button a {
+  color: white;
+  text-decoration: none;
+}
+
+button a:hover {
+  color: pink;
 }
 
 .container {
   max-width: 1300px;
 }
 
+/* each column */
 .toDo {
   border: 1px solid black;
   max-width: 300px;
@@ -26,24 +46,7 @@ h1 {
   max-width: 300px;
 }
 
+/* One Task */
 .card {
   margin: 10px auto;
-}
-
-section {
-  margin: 0 auto;
-}
-
-/* button */
-button {
-  margin: 5px;
-}
-
-button a {
-  color: white;
-  text-decoration: none;
-}
-
-button a:hover {
-  color: pink;
 }
