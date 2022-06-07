@@ -11,6 +11,7 @@ h1 {
 
 h4 {
   color: white;
+  text-align: center;
 }
 
 section {
@@ -58,7 +59,7 @@ button a:hover {
 
 /* One Task */
 .card {
-  margin: 10px auto;
+  margin: 20px auto;
   transition: 1s;
 }
 
