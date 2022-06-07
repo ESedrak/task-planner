@@ -1,0 +1,13 @@
+.container {
+  max-width: 1300px;
+}
+
+.oneTask {
+  border: 1px solid black;
+  max-width: 300px;
+  margin-right: 10px;
+}
+
+.card {
+  margin: 10px auto;
+}
