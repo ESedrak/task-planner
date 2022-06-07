@@ -83,6 +83,7 @@ button a:hover {
   position: relative;
   top: 3rem;
   width: 50rem;
+  background-color: #5e548e;
 }
 
 #taskFormHeader {
