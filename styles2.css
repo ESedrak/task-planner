@@ -1,10 +1,20 @@
+/* global css */
+body {
+  background-color: black;
+}
+
 /* header */
 h1 {
   text-align: center;
+  color: white;
+}
+
+h4 {
+  color: white;
 }
 
 section {
-  margin: 0 auto;
+  margin: 5px auto;
 }
 
 /* button */
@@ -27,26 +37,37 @@ button a:hover {
 
 /* each column */
 .toDo {
-  border: 1px solid black;
+  border: 1px solid white;
   max-width: 300px;
 }
 
 .inProgress {
-  border: 1px solid black;
+  border: 1px solid white;
   max-width: 300px;
 }
 
 .review {
-  border: 1px solid black;
+  border: 1px solid white;
   max-width: 300px;
 }
 
 .completed {
-  border: 1px solid black;
+  border: 1px solid white;
   max-width: 300px;
 }
 
 /* One Task */
 .card {
   margin: 10px auto;
+  transition: 1s;
+}
+
+.card:hover {
+  background-color: rgb(192, 189, 189);
+  transform: scale(1.1);
+}
+
+/* row */
+.row {
+  margin-bottom: 10px;
 }

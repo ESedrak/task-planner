@@ -47,156 +47,196 @@
           </div>
         </div>
       </nav>
+      <h1>Task Planner</h1>
     </header>
-    <h1>Task Planner</h1>
-    <div class="container">
-      <div class="row">
-        <!-- to do section-->
-        <section class="toDo">
-          <div class="oneTask">
-            <div class="col">
-              <h4>To do</h4>
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Task Name</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Assigned To:</h6>
-                  <p class="card-text">Task Description</p>
-                  <a href="./addTask.html" class="card-link">Edit Task</a>
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <!-- Project name -->
+            <label for="projectName" class="form-label"><h4>Project</h4></label>
+            <input
+              class="form-control"
+              list="datalistOptions"
+              id="projectName"
+              placeholder="Type to search..."
+            />
+            <datalist id="datalistOptions">
+              <option value="Task Planner"></option>
+              <option value="Menu Planner"></option>
+              <option value="Weather App"></option>
+            </datalist>
+          </div>
+          <!-- Collaborators -->
+          <div class="col">
+            <label for="projectName" class="form-label"
+              ><h4>Collaborators</h4></label
+            >
+            <button type="button" class="btn btn-secondary">
+              <a href="./addName.html">Add Name</a>
+            </button>
+            <input
+              class="form-control"
+              list="collaborators"
+              id="collaboratrs"
+              placeholder="Type to search..."
+            />
+            <datalist id="collaborators">
+              <option value="Riya"></option>
+              <option value="Anthony"></option>
+              <option value="Elizabeth"></option>
+            </datalist>
+          </div>
+        </div>
+
+        <div class="row">
+          <!-- to do section-->
+          <section class="toDo">
+            <div class="oneTask">
+              <div class="col">
+                <h4>To do</h4>
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Task Name</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Assigned To:</h6>
+                    <p class="card-text">Task Description</p>
+                    <a href="./addTask.html" class="card-link">Edit Task</a>
+                  </div>
                 </div>
-              </div>
-              <div class="oneTask">
-                <div class="col">
-                  <div class="card">
-                    <div class="card-body">
-                      <h5 class="card-title">Task Name</h5>
-                      <h6 class="card-subtitle mb-2 text-muted">
-                        Assigned To:
-                      </h6>
-                      <p class="card-text">Task Description</p>
-                      <a href="./addTask.html" class="card-link">Edit Task</a>
+                <div class="oneTask">
+                  <div class="col">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title">Task Name</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">
+                          Assigned To:
+                        </h6>
+                        <p class="card-text">Task Description</p>
+                        <a href="./addTask.html" class="card-link">Edit Task</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="oneTask">
+                  <div class="col">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title">Task Name</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">
+                          Assigned To:
+                        </h6>
+                        <p class="card-text">Task Description</p>
+                        <a href="./addTask.html" class="card-link">Edit Task</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="oneTask">
+                  <div class="col">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title">Task Name</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">
+                          Assigned To:
+                        </h6>
+                        <p class="card-text">Task Description</p>
+                        <a href="./addTask.html" class="card-link">Edit Task</a>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="oneTask">
-                <div class="col">
-                  <div class="card">
-                    <div class="card-body">
-                      <h5 class="card-title">Task Name</h5>
-                      <h6 class="card-subtitle mb-2 text-muted">
-                        Assigned To:
-                      </h6>
-                      <p class="card-text">Task Description</p>
-                      <a href="./addTask.html" class="card-link">Edit Task</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="oneTask">
-                <div class="col">
-                  <div class="card">
-                    <div class="card-body">
-                      <h5 class="card-title">Task Name</h5>
-                      <h6 class="card-subtitle mb-2 text-muted">
-                        Assigned To:
-                      </h6>
-                      <p class="card-text">Task Description</p>
-                      <a href="./addTask.html" class="card-link">Edit Task</a>
-                    </div>
+            </div>
+            <button type="button" class="btn btn-secondary">
+              <a href="./addTask.html">Add Task</a>
+            </button>
+          </section>
+
+          <!-- In Progress -->
+          <section class="inProgress">
+            <div class="oneTask">
+              <div class="col">
+                <h4>In progress</h4>
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Task Name</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Assigned To:</h6>
+                    <p class="card-text">Task Description</p>
+                    <a href="./addTask.html" class="card-link">Edit Task</a>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <button type="button" class="btn btn-secondary">
-            <a href="./addTask.html">Add Task</a>
-          </button>
-        </section>
+            <button type="button" class="btn btn-secondary">
+              <a href="./addTask.html">Add Task</a>
+            </button>
+          </section>
 
-        <!-- In Progress -->
-        <section class="inProgress">
-          <div class="oneTask">
-            <div class="col">
-              <h4>In progress</h4>
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Task Name</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Assigned To:</h6>
-                  <p class="card-text">Task Description</p>
-                  <a href="./addTask.html" class="card-link">Edit Task</a>
+          <!--Review section -->
+          <section class="review">
+            <h4>Review</h4>
+            <div class="oneTask">
+              <div class="col">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Task Name</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Assigned To:</h6>
+                    <p class="card-text">Task Description</p>
+                    <a href="./addTask.html" class="card-link">Edit Task</a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <button type="button" class="btn btn-secondary">
-            <a href="./addTask.html">Add Task</a>
-          </button>
-        </section>
+            <div class="oneTask">
+              <div class="col">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Task Name</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Assigned To:</h6>
+                    <p class="card-text">Task Description</p>
+                    <a href="./addTask.html" class="card-link">Edit Task</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="oneTask">
+              <div class="col">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Task Name</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Assigned To:</h6>
+                    <p class="card-text">Task Description</p>
+                    <a href="./addTask.html" class="card-link">Edit Task</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="btn btn-secondary">
+              <a href="./addTask.html">Add Task</a>
+            </button>
+          </section>
 
-        <!--Review section -->
-        <section class="review">
-          <h4>Review</h4>
-          <div class="oneTask">
-            <div class="col">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Task Name</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Assigned To:</h6>
-                  <p class="card-text">Task Description</p>
-                  <a href="./addTask.html" class="card-link">Edit Task</a>
+          <!-- Completed section -->
+          <section class="completed">
+            <h4>Completed</h4>
+            <div class="oneTask">
+              <div class="col">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Task Name</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Assigned To:</h6>
+                    <p class="card-text">Task Description</p>
+                    <a href="./addTask.html" class="card-link">Edit Task</a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="oneTask">
-            <div class="col">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Task Name</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Assigned To:</h6>
-                  <p class="card-text">Task Description</p>
-                  <a href="./addTask.html" class="card-link">Edit Task</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="oneTask">
-            <div class="col">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Task Name</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Assigned To:</h6>
-                  <p class="card-text">Task Description</p>
-                  <a href="./addTask.html" class="card-link">Edit Task</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <button type="button" class="btn btn-secondary">
-            <a href="./addTask.html">Add Task</a>
-          </button>
-        </section>
-
-        <!-- Completed section -->
-        <section class="completed">
-          <h4>Completed</h4>
-          <div class="oneTask">
-            <div class="col">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Task Name</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Assigned To:</h6>
-                  <p class="card-text">Task Description</p>
-                  <a href="./addTask.html" class="card-link">Edit Task</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <button type="button" class="btn btn-secondary">
-            <a href="./addTask.html">Add Task</a>
-          </button>
-        </section>
+            <button type="button" class="btn btn-secondary">
+              <a href="./addTask.html">Add Task</a>
+            </button>
+          </section>
+        </div>
       </div>
-    </div>
+    </main>
   </body>
 </html>
