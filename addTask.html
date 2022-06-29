@@ -62,23 +62,24 @@
             Delete
           </button>
         </div>
-        
+
         <!-- Add task header & description -->
         <div class="row">
           <div class="mb-3">
             <!-- Error span -->
-            <span class='errorSpan' id="taskHeaderError"></span>
+            <span class="errorSpan" id="taskHeaderError"></span>
             <input
               type="text"
               class="form-control"
               id="taskHeader"
               name="taskHeader"
               placeholder="Task Name"
+              required
             />
           </div>
           <div class="mb-3">
             <!-- Error span -->
-            <span class='errorSpan' id="taskDescriptionError"></span>
+            <span class="errorSpan" id="taskDescriptionError"></span>
             <textarea
               class="form-control"
               name="taskText"
@@ -86,25 +87,27 @@
               cols="30"
               rows="10"
               placeholder="Add Task Description"
+              required
             ></textarea>
           </div>
         </div>
         <!-- Assign Dropdown Menu -->
         <div class="row">
           <div class="mb-3">
-            <span class='errorSpan' id="taskAssignError"></span>
+            <span class="errorSpan" id="taskAssignError"></span>
             <input
               type="text"
               class="form-control"
               id="taskAssign"
               name="taskAssign"
               placeholder="Assigned to:"
+              required
             />
           </div>
         </div>
         <!-- Due date Dropdown Menu -->
         <div class="row">
-          <span class='errorSpan' id="dueDateError"></span>
+          <span class="errorSpan" id="dueDateError"></span>
           <div class="mb-3 d-inline-flex">
             <div class="col-2">
               <label for="dueDate">Due Date: </label>
@@ -115,7 +118,8 @@
                 class="form-control"
                 id="dueDate"
                 name="dueDate"
-                value =""
+                value=""
+                required
               />
             </div>
           </div>
@@ -123,9 +127,15 @@
         <!-- Priority Dropdown Menu -->
         <div class="row">
           <div class="mb-3">
-            <span class='errorSpan' id="taskPriorityError"></span>
-            <select class="form-select" aria-label="Priority" id="taskPriority">
-              <option selected value="default">Priority:</option>
+            <span class="errorSpan" id="taskPriorityError"></span>
+            <select
+              class="form-select"
+              aria-label="Priority"
+              id="taskPriority"
+              aria-placeholder="Priority"
+              required
+            >
+              <option selected value="default"></option>
               <option value="low">Low</option>
               <option value="medium">Medium</option>
               <option value="high">High</option>
@@ -135,8 +145,13 @@
         <!-- Status Dropdown Menu -->
         <div class="row">
           <div class="mb-3">
-            <span class='errorSpan' id="taskStatusError"></span>
-            <select class="form-select" aria-label="Status" id="taskStatus">
+            <span class="errorSpan" id="taskStatusError"></span>
+            <select
+              class="form-select"
+              aria-label="Status"
+              id="taskStatus"
+              required
+            >
               <option selected value="default">Status:</option>
               <option value="toDo">To Do</option>
               <option value="inProgress">In Progress</option>
@@ -151,7 +166,7 @@
             type="button submit"
             class="btn btn-primary btn-sm col-2 m-2"
             name="submit"
-            id = 'submitTaskFormBtn'
+            id="submitTaskFormBtn"
           >
             Submit
           </button>
