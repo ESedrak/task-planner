@@ -35,9 +35,9 @@ button a:hover {
   color: pink;
 }
 
-.container {
+/* .container {
   max-width: 1300px;
-}
+} */
 
 /* each column */
 .toDo {
@@ -81,8 +81,8 @@ button a:hover {
 #addNameForm {
   border: solid 1px white;
   position: relative;
-  top: 3rem;
-  width: 50rem;
+  top: 1rem;
+  width: 29em;
   background-color: #5e548e;
 }
 

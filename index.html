@@ -92,7 +92,7 @@
 
         <div class="row">
           <!-- to do section-->
-          <section class="toDo">
+          <section class="toDo" id="toDolist">
             <div class="oneTask">
               <div class="col">
                 <h4>To do</h4>
@@ -237,28 +237,7 @@
           <!-- Completed section -->
           <section class="completed">
             <h4>Completed</h4>
-            <div class="oneTask">
-              <div class="col">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Add Logo</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Wed, 8th June</h6>
-                    <p class="card-text">Assigned to: Anthony</p>
-                       <select class="form-select" aria-label="Status">
-                        <option selected>Priority</option>
-                        <option value="low">Low</option>
-                        <option value="medium">Medium</option>
-                        <option value="high">High</option>
-                      </select>
-                    <a
-                      href="./addTask.html"
-                      class="card-link btn btn-primary mt-2"
-                      >Edit Task</a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
+
             <button type="button" class="btn btn-secondary">
               <a href="./addTask.html">Add Task</a>
             </button>
@@ -266,6 +245,149 @@
         </div>
       </div>
     </main>
+
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Add Task
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+           <!-- Header -->
+    <div id="addTaskDiv">
+    <div class="container d-flex justify-content-center" id="taskFormHeader">
+      <div class="row">
+        <h1>Task Form</h1>
+      </div>
+    </div>
+
+    <!-- Add Task Form -->
+    <form action="#" method="#">
+      <div class="container" id="taskFormBox">
+        <!-- Delete button -->
+        <div class="row justify-content-end">
+          <button type="button submit" class="btn btn-danger btn-sm col-2 m-2">
+            Delete
+          </button>
+        </div>
+
+        <!-- Add task header & description -->
+        <div class="row">
+          <div class="mb-3">
+            <!-- Error span -->
+            <span class="errorSpan" id="taskHeaderError"></span>
+            <input
+              type="text"
+              class="form-control"
+              id="taskHeader"
+              name="taskHeader"
+              placeholder="Task Name"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <!-- Error span -->
+            <span class="errorSpan" id="taskDescriptionError"></span>
+            <textarea
+              class="form-control"
+              name="taskText"
+              id="taskText"
+              cols="30"
+              rows="10"
+              placeholder="Add Task Description"
+              required
+            ></textarea>
+          </div>
+        </div>
+        <!-- Assign Dropdown Menu -->
+        <div class="row">
+          <div class="mb-3">
+            <span class="errorSpan" id="taskAssignError"></span>
+            <input
+              type="text"
+              class="form-control"
+              id="taskAssign"
+              name="taskAssign"
+              placeholder="Assigned to:"
+              required
+            />
+          </div>
+        </div>
+        <!-- Due date Dropdown Menu -->
+        <div class="row">
+          <span class="errorSpan" id="dueDateError"></span>
+          <div class="mb-3 d-inline-flex">
+            <div class="col-2">
+              <label for="dueDate">Due Date: </label>
+            </div>
+            <div class="col-10">
+              <input
+                type="date"
+                class="form-control"
+                id="dueDate"
+                name="dueDate"
+                value=""
+                required
+              />
+            </div>
+          </div>
+        </div>
+        <!-- Priority Dropdown Menu -->
+        <div class="row">
+          <div class="mb-3">
+            <span class="errorSpan" id="taskPriorityError"></span>
+            <select
+              class="form-select"
+              aria-label="Priority"
+              id="taskPriority"
+              aria-placeholder="Priority"
+              required
+            >
+              <option selected value="default"></option>
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+            </select>
+          </div>
+        </div>
+        <!-- Status Dropdown Menu -->
+        <div class="row">
+          <div class="mb-3">
+            <span class="errorSpan" id="taskStatusError"></span>
+            <select
+              class="form-select"
+              aria-label="Status"
+              id="taskStatus"
+              required
+            >
+              <option selected value="default">Status:</option>
+              <option value="toDo">To Do</option>
+              <option value="inProgress">In Progress</option>
+              <option value="review">Review</option>
+              <option value="done">Done</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </form>
+    </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary"  id="submitTaskFormBtn">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
     <script src="./src/index.js"></script>
+    <script src="./src/taskManager.js"></script>
   </body>
 </html>
