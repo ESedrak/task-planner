@@ -11,7 +11,7 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link href="./src/styles.css" rel="stylesheet" />
     <title>Add Task</title>
   </head>
 
@@ -99,11 +99,16 @@
         <div class="row">
           <div class="mb-3 d-inline-flex">
             <div class="col-2">
-            <label for="dueDate">Due Date: </label>
-          </div>
-          <div class="col-3">
-            <input type="date" class='form-control' id="dueDate" name="dueDate">
-          </div>
+              <label for="dueDate">Due Date: </label>
+            </div>
+            <div class="col-3">
+              <input
+                type="date"
+                class="form-control"
+                id="dueDate"
+                name="dueDate"
+              />
+            </div>
           </div>
         </div>
         <!-- Priority Dropdown Menu -->
@@ -155,5 +160,6 @@
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
+    <script src="./src/addTask.js"></script>
   </body>
 </html>
