@@ -100,3 +100,8 @@ button a:hover {
   position: relative;
   top: 1.5rem;
 }
+
+/* Error spans */
+.errorSpan {
+  color: rgb(249, 93, 93);
+}
