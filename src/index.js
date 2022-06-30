@@ -1,4 +1,5 @@
 const tasksManager = new TaskManager();
+const tasksManagerArray = tasksManager.tasks;
 
 // console.log(tasksManager);
 // addTask Form
@@ -46,17 +47,12 @@ const validateTaskForm = () => {
       taskPriority.value,
       taskStatus.value
     );
-    console.log(tasksManager);
+    console.log(tasksManager.tasks);
     // Append new task card to body after submitting
     let z = document.createElement("div");
-    z.innerHTML = createCard(
-      taskName.value,
-      taskDescription.value,
-      taskAssign.value,
-      dueDate.value,
-      taskPriority.value,
-      taskStatus.value
-    );
+    z.innerHTML = createCard(tasksManagerArray[tasksManagerArray.length-1]);
+
+    // Sort cards into correct Status column
     if (taskStatus.value === "toDo") {
       document.querySelector("#toDoList").appendChild(z);
     } else if (taskStatus.value === "inProgress") {

@@ -29,24 +29,18 @@ class TaskManager {
 
 // create a div = id is id
 
-function createCard(
-  taskName,
-  taskDescription,
-  taskAssign,
-  dueDate,
-  taskPriority,
-  id
-) {
+function createCard(array) {
   const oneCard = `
-            <div class="oneTask" id= ${id}>
+            <div class="oneTask" id= ${array.id}>
               <div class="col">
                 <div class="card">
                   <div class="card-body">
-                    <h5 class="card-title">${taskName}</h5>
-                    <p class="card-text"> I think things are not corect${taskDescription}</p>
-                    <p class="card-text">Assigned to: ${taskAssign}</p>
-                    <h6 class="card-subtitle mb-2 text-muted">Due Date: ${dueDate}</h6>
-                    <p class="card-text">Priority: ${taskPriority}</p>
+                    <h5 class="card-title">${array.taskName}</h5>
+                    <h5 class="card-title">THIS IS ID:${array.id}</h5>
+                    <p class="card-text"> I think things are not corect${array.taskDescription}</p>
+                    <p class="card-text">Assigned to: ${array.taskAssign}</p>
+                    <h6 class="card-subtitle mb-2 text-muted">Due Date: ${array.dueDate}</h6>
+                    <p class="card-text">Priority: ${array.taskPriority}</p>
                   </div>
                 </div>
               </div>
