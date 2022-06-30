@@ -1,6 +1,12 @@
+
+
+
 class TaskManager {
-  constructor(list) {
-    this.todoList = list;
-    this.todos = [];
+  constructor(currentId = 0) {
+    this.currentId = currentId;
+    this.addTask = [];
   }
+
+addTask()
+
 }
