@@ -13,6 +13,9 @@ const taskDescriptionError = document.querySelector("#taskDescriptionError");
 const taskAssignError = document.querySelector("#taskAssignError");
 const dueDateError = document.querySelector("#dueDateError");
 
+// Due Date logic
+let todayDate = new Date().getTime();
+
 const validateTaskForm = () => {
   if (taskName.value === "") {
     taskNameError.innerText = "Please add a task name.";
@@ -27,9 +30,12 @@ const validateTaskForm = () => {
     taskAssignError.innerText = "Please assign a name.";
   } else if (taskAssign.value.length < 8) {
     taskAssignError.innerText = "Name needs to be longer than 8 characters.";
-  } else if (dueDate.value === "") {
+  } else if (!dueDate.value) {
     dueDateError.innerText = "Please assign a date.";
-  } else {
+  } else if ((new Date(`${dueDate.value}`).getTime()) < todayDate){
+    dueDateError.innerText = "You cannot pick a past date."
+  }
+  else {
     // reset everything once submitted successfully
     taskName.value = "";
     taskDescription.value = "";
