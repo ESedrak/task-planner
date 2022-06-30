@@ -1,4 +1,6 @@
 const tasksManager = new TaskManager();
+createCard();
+
 // console.log(tasksManager);
 // addTask Form
 const taskName = document.querySelector("#taskName");
@@ -45,7 +47,7 @@ const validateTaskForm = () => {
       taskPriority.value,
       taskStatus.value
     );
-    // console.log(tasksManager);
+    console.log(tasksManager);
     // reset everything once submitted successfully
     taskName.value = "";
     taskDescription.value = "";
@@ -59,6 +61,7 @@ const validateTaskForm = () => {
     taskAssignError.innerText = "";
     dueDateError.innerText = "";
   }
+  document.body.appendChild(createCard(taskName));
 };
 
 submitTaskFormBtn.addEventListener("click", validateTaskForm);
