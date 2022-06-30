@@ -48,6 +48,16 @@ const validateTaskForm = () => {
       taskStatus.value
     );
     console.log(tasksManager);
+    // Append new task card to body after submitting
+    let z = document.createElement('div');
+    z.innerHTML = createCard(taskName.value,
+      taskDescription.value,
+      taskAssign.value,
+      dueDate.value,
+      taskPriority.value,
+      taskStatus.value);
+    document.querySelector('#toDoList').appendChild(z);
+
     // reset everything once submitted successfully
     taskName.value = "";
     taskDescription.value = "";
@@ -60,8 +70,7 @@ const validateTaskForm = () => {
     taskDescriptionError.innerText = "";
     taskAssignError.innerText = "";
     dueDateError.innerText = "";
-  }
-  document.body.appendChild(createCard(taskName));
+  };
 };
 
 submitTaskFormBtn.addEventListener("click", validateTaskForm);

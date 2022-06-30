@@ -44,10 +44,10 @@ function createCard(
                   <div class="card-body">
                     <h5 class="card-title">${taskName}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">${dueDate}</h6>
-                    <p class="card-text">${taskAssign}</p>
+                    <p class="card-text">Assigned to: ${taskAssign}</p>
                     <p class="card-text">${taskDescription}</p>
-                    <p class="card-text">${taskStatus}</p>
-                    <p class="card-text">${taskPriority}</p>
+                    <p class="card-text">Status: ${taskStatus}</p>
+                    <p class="card-text">Priority: ${taskPriority}</p>
                   </div>
                 </div>
               </div>
