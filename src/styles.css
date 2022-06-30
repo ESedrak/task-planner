@@ -1,79 +1,56 @@
-/* index section */
 /* global css */
 body {
   background-color: #9f86c0;
 }
 
+/* Main site */
+
 /* header */
-h1 {
+#siteHeader {
   text-align: center;
   color: white;
   background-color: #231942;
+  padding: 1em;
 }
 
-h4 {
+.mainSubHeader {
   color: white;
   text-align: center;
 }
 
+/* button */
+#addTaskBtn {
+  color: white;
+  background-color: #231942;
+  padding: 0.5em;
+  margin: 0.5em;
+}
+
+/* each section */
 section {
   margin: 5px auto;
   background-color: #5e548e;
+  min-height: 40em;
 }
 
-/* button */
-button {
-  margin: 5px;
-}
-
-button a {
-  color: white;
-  text-decoration: none;
-}
-
-button a:hover {
-  color: pink;
-}
-
-/* .container {
-  max-width: 1300px;
-} */
-
-/* each column */
-.toDo {
+#toDoList {
   border: 1px solid white;
   max-width: 300px;
 }
 
-.inProgress {
+#inProgress {
   border: 1px solid white;
   max-width: 300px;
 }
 
-.review {
+#review {
   border: 1px solid white;
   max-width: 300px;
 }
 
-.completed {
+#completed {
   border: 1px solid white;
   max-width: 300px;
-}
-
-/* One Task */
-.card {
-  margin: 20px auto;
-  transition: 1s;
-}
-
-.card:hover {
-  background-color: rgb(192, 189, 189);
-  transform: scale(1.1);
-}
-
-/* row */
-.row {
-  margin-bottom: 10px;
 }
 
 /* Add Task section */
@@ -86,22 +63,36 @@ button a:hover {
   background-color: #5e548e;
 }
 
+/* Header */
 #taskFormHeader {
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
-}
-
-.navbar-brand {
-  position: absolute;
-}
-
-#taskFormHeader {
-  position: relative;
-  top: 1.5rem;
+  text-align: center;
+  color: white;
+  background-color: #231942;
+  padding: 1em;
 }
 
 /* Error spans */
 .errorSpan {
   color: rgb(249, 93, 93);
+}
+
+/* Form Labels */
+label {
+  color: white;
+}
+/* Submit Form Buttons */
+#submitTaskFormBtn {
+  background-color: #231942;
+}
+#cancelTaskFormBtn {
+  background-color: #9f86c0;
+}
+
+/* Date/Time information */
+#date-time {
+  color: white;
+}
+
+option[value=""][disabled] {
+  display: none;
 }
