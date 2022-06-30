@@ -10,19 +10,21 @@ header {
   background-color: #231942;
   padding: 1em;
 }
+
 #siteHeader {
   text-align: center;
   color: white;
 }
+
 header span {
   display: flex;
   justify-content: center;
   font-size: 1.5em;
   font-weight: bold;
   color: blue;
-    background-image: linear-gradient(to right, red, yellow);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(to right, red, yellow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .mainSubHeader {
@@ -92,6 +94,7 @@ section {
 label {
   color: white;
 }
+
 /* Submit Form Buttons */
 #submitTaskFormBtn {
   background-color: #231942;
@@ -105,11 +108,13 @@ label {
   color: white;
 }
 
-option[value=""][disabled] {
-  display: none;
+/* One Card */
+.card {
+  margin: 20px auto;
+  transition: 1s;
 }
 
-/* One Card */
-.oneTask {
-  margin-bottom: 0.2em;
+.card:hover {
+  background-color: rgb(255, 244, 254);
+  transform: scale(1.1);
 }
