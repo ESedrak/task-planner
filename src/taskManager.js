@@ -36,8 +36,7 @@ function createCard(array) {
                 <div class="card">
                   <div class="card-body">
                     <h5 class="card-title">${array.taskName}</h5>
-                    <h5 class="card-title">THIS IS ID:${array.id}</h5>
-                    <p class="card-text"> I think things are not corect${array.taskDescription}</p>
+                    <p class="card-text"> ${array.taskDescription}</p>
                     <p class="card-text">Assigned to: ${array.taskAssign}</p>
                     <h6 class="card-subtitle mb-2 text-muted">Due Date: ${array.dueDate}</h6>
                     <p class="card-text">Priority: ${array.taskPriority}</p>
