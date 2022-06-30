@@ -1,5 +1,4 @@
 const tasksManager = new TaskManager();
-createCard();
 
 // console.log(tasksManager);
 // addTask Form
@@ -49,28 +48,37 @@ const validateTaskForm = () => {
     );
     console.log(tasksManager);
     // Append new task card to body after submitting
-    let z = document.createElement('div');
-    z.innerHTML = createCard(taskName.value,
+    let z = document.createElement("div");
+    z.innerHTML = createCard(
+      taskName.value,
       taskDescription.value,
       taskAssign.value,
       dueDate.value,
       taskPriority.value,
-      taskStatus.value);
-    document.querySelector('#toDoList').appendChild(z);
-
+      taskStatus.value
+    );
+    if (taskStatus.value === "toDo") {
+      document.querySelector("#toDoList").appendChild(z);
+    } else if (taskStatus.value === "inProgress") {
+      document.querySelector("#inProgress").appendChild(z);
+    } else if (taskStatus.value === "review") {
+      document.querySelector("#review").appendChild(z);
+    } else if ((taskStatus.value = "complete")) {
+      document.querySelector("#completed").appendChild(z);
+    }
     // reset everything once submitted successfully
     taskName.value = "";
     taskDescription.value = "";
     taskAssign.value = "";
     dueDate.value = "";
-    taskPriority.value = "low";
+    taskPriority.value = "Low";
     taskStatus.value = "toDo";
 
     taskNameError.innerText = "";
     taskDescriptionError.innerText = "";
     taskAssignError.innerText = "";
     dueDateError.innerText = "";
-  };
+  }
 };
 
 submitTaskFormBtn.addEventListener("click", validateTaskForm);
