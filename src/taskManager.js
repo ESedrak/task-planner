@@ -31,22 +31,21 @@ class TaskManager {
 
 function createCard(
   taskName,
-  dueDate,
-  taskAssign,
   taskDescription,
-  taskStatus,
-  taskPriority
+  taskAssign,
+  dueDate,
+  taskPriority,
+  id
 ) {
   const oneCard = `
-            <div class="oneTask">
+            <div class="oneTask" id= ${id}>
               <div class="col">
                 <div class="card">
                   <div class="card-body">
                     <h5 class="card-title">${taskName}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">${dueDate}</h6>
+                    <p class="card-text"> I think things are not corect${taskDescription}</p>
                     <p class="card-text">Assigned to: ${taskAssign}</p>
-                    <p class="card-text">${taskDescription}</p>
-                    <p class="card-text">Status: ${taskStatus}</p>
+                    <h6 class="card-subtitle mb-2 text-muted">Due Date: ${dueDate}</h6>
                     <p class="card-text">Priority: ${taskPriority}</p>
                   </div>
                 </div>
