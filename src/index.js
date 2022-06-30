@@ -1,5 +1,5 @@
 const tasksManager = new TaskManager();
-console.log(tasksManager);
+// console.log(tasksManager);
 // addTask Form
 const taskName = document.querySelector("#taskName");
 const taskDescription = document.querySelector("#taskText");
@@ -41,10 +41,11 @@ const validateTaskForm = () => {
       taskName.value,
       taskDescription.value,
       taskAssign.value,
+      dueDate.value,
       taskPriority.value,
       taskStatus.value
     );
-    console.log(tasksManager);
+    // console.log(tasksManager);
     // reset everything once submitted successfully
     taskName.value = "";
     taskDescription.value = "";

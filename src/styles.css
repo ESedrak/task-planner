@@ -96,3 +96,8 @@ label {
 option[value=""][disabled] {
   display: none;
 }
+
+/* One Card */
+.oneTask {
+  margin-bottom: 0.2em;
+}
