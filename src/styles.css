@@ -1,19 +1,21 @@
 /* global css */
 body {
-  background-color: #9f86c0;
+  background-color: beige;
 }
 
 /* Main site */
 
 /* header */
 header {
-  background-color: #231942;
+  background-color: powderblue;
   padding: 1em;
+  border: 5px solid whitesmoke;
 }
 
 #siteHeader {
   text-align: center;
-  color: white;
+  color: blueviolet;
+  font-weight: bold;
 }
 
 header span {
@@ -28,14 +30,15 @@ header span {
 }
 
 .mainSubHeader {
-  color: white;
+  color: black;
   text-align: center;
 }
 
 /* button */
 #addTaskBtn {
-  color: white;
-  background-color: #231942;
+  color: black;
+  background-color: lightskyblue;
+  border: 5px solid pink;
   padding: 0.5em;
   margin: 0.5em;
 }
@@ -43,28 +46,31 @@ header span {
 /* each section */
 section {
   margin: 5px auto;
-  background-color: #5e548e;
   min-height: 40em;
 }
 
 #toDoList {
-  border: 1px solid white;
+  border: 5px solid yellow;
   max-width: 300px;
+  background-color: whitesmoke;
 }
 
 #inProgress {
-  border: 1px solid white;
+  border: 5px solid yellowgreen;
   max-width: 300px;
+  background-color: whitesmoke;
 }
 
 #review {
-  border: 1px solid white;
+  border: 5px solid plum;
   max-width: 300px;
+  background-color: whitesmoke;
 }
 
 #completed {
-  border: 1px solid white;
+  border: 5px solid blue;
   max-width: 300px;
+  background-color: whitesmoke;
 }
 
 /* Add Task section */
@@ -80,8 +86,8 @@ section {
 /* Header */
 #taskFormHeader {
   text-align: center;
-  color: white;
-  background-color: #231942;
+  color: black;
+  background-color: white;
   padding: 1em;
 }
 
