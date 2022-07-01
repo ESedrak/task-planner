@@ -76,11 +76,11 @@ section {
 /* Add Task section */
 #taskFormBox,
 #addNameForm {
-  border: solid 1px white;
+  border: solid 1px orange;
   position: relative;
   top: 1rem;
   width: 29em;
-  background-color: #5e548e;
+  background-color: orange;
 }
 
 /* Header */
@@ -89,6 +89,7 @@ section {
   color: black;
   background-color: white;
   padding: 1em;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 /* Error spans */
@@ -98,15 +99,17 @@ section {
 
 /* Form Labels */
 label {
-  color: white;
+  color: whitesmoke;
 }
 
 /* Submit Form Buttons */
 #submitTaskFormBtn {
-  background-color: #231942;
+  background-color: yellowgreen;
+  border: solid 3px orange;
 }
 #cancelTaskFormBtn {
   background-color: #9f86c0;
+  border: solid 3px orange;
 }
 
 /* Date/Time information */
