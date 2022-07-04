@@ -23,6 +23,25 @@ class TaskManager {
     };
     this.tasks.push(task);
   }
+
+  render() {
+    this.tasks.forEach((task) => {
+      console.log(task);
+      let z = document.createElement("div");
+      z.innerHTML = createCard(task);
+      document.body.appendChild(z);
+
+      if (taskStatus.value === "toDo") {
+        document.querySelector("#toDoList").appendChild(z);
+      } else if (taskStatus.value === "inProgress") {
+        document.querySelector("#inProgress").appendChild(z);
+      } else if (taskStatus.value === "review") {
+        document.querySelector("#review").appendChild(z);
+      } else if ((taskStatus.value = "complete")) {
+        document.querySelector("#completed").appendChild(z);
+      }
+    });
+  }
 }
 
 function createCard(array) {

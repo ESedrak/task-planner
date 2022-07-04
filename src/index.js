@@ -109,53 +109,44 @@ const validateTaskForm = () => {
       taskStatus.value
     );
     console.log(tasksManagerArray);
-    // Append new task card to body after submitting
-    let z = document.createElement("div");
-    z.innerHTML = createCard(tasksManagerArray[tasksManagerArray.length - 1]);
-
-console.log(typeof tasksManagerArray[tasksManagerArray.length - 1].id);
-
-    // Sort cards into correct Status column
-    if (taskStatus.value === "toDo") {
-      document.querySelector("#toDoList").appendChild(z);
-    } else if (taskStatus.value === "inProgress") {
-      document.querySelector("#inProgress").appendChild(z);
-    } else if (taskStatus.value === "review") {
-      document.querySelector("#review").appendChild(z);
-    } else if ((taskStatus.value = "complete")) {
-      document.querySelector("#completed").appendChild(z);
-    }
-
-    // reset everything once submitted successfully
-    // Values
-    taskName.value = "";
-    taskDescription.value = "";
-    taskAssign.value = "";
-    dueDate.value = "";
-    taskPriority.value = "Low";
-    taskStatus.value = "toDo";
-    // Styles
-    taskName.classList.remove("successStyle");
-    taskDescription.classList.remove("successStyle");
-    taskAssign.classList.remove("successStyle");
-    dueDate.classList.remove("successStyle");
-    taskPriority.classList.remove("successStyle");
-    taskStatus.classList.remove("successStyle");
-
-    // Display Successful Message for 3 seconds
-    successMsg.innerHTML = "Submitted Successfully";
-    setTimeout(() => {
-      successMsg.innerHTML = "";
-    }, 3000);
+    tasksManager.render();
   }
-  document.querySelector(`#taskDeleteBtn${tasksManagerArray[tasksManagerArray.length - 1].id}`).addEventListener('click', () => {
-    const element = document.querySelector(`#card${tasksManagerArray[tasksManagerArray.length - 1].id}`);
-    element.remove();
-  });
+  document
+    .querySelector(
+      `#taskDeleteBtn${tasksManagerArray[tasksManagerArray.length - 1].id}`
+    )
+    .addEventListener("click", () => {
+      document
+        .querySelector(
+          `#card${tasksManagerArray[tasksManagerArray.length - 1].id}`
+        )
+        .remove();
+    });
+
+  // reset everything once submitted successfully
+  // Values
+  taskName.value = "";
+  taskDescription.value = "";
+  taskAssign.value = "";
+  dueDate.value = "";
+  taskPriority.value = "Low";
+  taskStatus.value = "toDo";
+  // Styles
+  taskName.classList.remove("successStyle");
+  taskDescription.classList.remove("successStyle");
+  taskAssign.classList.remove("successStyle");
+  dueDate.classList.remove("successStyle");
+  taskPriority.classList.remove("successStyle");
+  taskStatus.classList.remove("successStyle");
+
+  // Display Successful Message for 3 seconds
+  successMsg.innerHTML = "Submitted Successfully";
+  setTimeout(() => {
+    successMsg.innerHTML = "";
+  }, 3000);
 };
 
 submitTaskFormBtn.addEventListener("click", validateTaskForm);
-
 
 // showCurrentTime/Date
 const zeroFill = (n) => {
