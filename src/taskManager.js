@@ -23,11 +23,7 @@ class TaskManager {
     };
     this.tasks.push(task);
   }
-
-  deleteTask(id) {}
 }
-
-// create a div = id is id
 
 function createCard(array) {
   const oneCard = `
@@ -40,6 +36,7 @@ function createCard(array) {
                     <p class="card-text">Assigned to: ${array.taskAssign}</p>
                     <h6 class="card-subtitle mb-2 text-muted">Due Date: ${array.dueDate}</h6>
                     <p class="card-text">Priority: ${array.taskPriority}</p>
+                    <button type="button submit" class="btn btn-danger removeMe"> Delete </button>
                   </div>
                 </div>
               </div>

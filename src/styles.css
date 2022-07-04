@@ -21,7 +21,6 @@ header span {
   justify-content: center;
   font-size: 1.5em;
   font-weight: bold;
-  color: blue;
   background-image: linear-gradient(to right, red, yellow);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -85,11 +84,6 @@ section {
   padding: 1em;
 }
 
-/* Error spans */
-.errorSpan {
-  color: rgb(249, 93, 93);
-}
-
 /* Form Labels */
 label {
   color: white;
@@ -117,4 +111,28 @@ label {
 .card:hover {
   background-color: rgb(255, 244, 254);
   transform: scale(1.1);
+}
+
+/* SuccessfulSubmit */
+#successfulSubmitMsg {
+  text-align: center;
+  color: lightgreen;
+  padding: 0.3em;
+}
+
+/* Success Submit */
+.successStyle {
+  border-width: thick;
+  border-color: lightgreen;
+}
+
+/* Error Submit */
+.errorStyle {
+  border-width: thick;
+  border-color: red;
+}
+
+/* Error spans */
+.errorSpan {
+  color: rgb(249, 93, 93);
 }

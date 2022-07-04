@@ -20,8 +20,9 @@
     </header>
     <main>
       <div class="container">
+        <!-- Modal Form -->
         <div id="modalForm">
-          <!-- Button trigger modal -->
+          <!-- Add Task Modal Button -->
           <button
             id="addTaskBtn"
             type="button"
@@ -32,7 +33,7 @@
             Add Task
           </button>
 
-          <!-- Modal -->
+          <!-- Modal Popup -->
           <div
             class="modal fade"
             id="exampleModal"
@@ -42,8 +43,8 @@
           >
             <div class="modal-dialog">
               <div class="modal-content">
+                <!-- Add Task Header -->
                 <div class="modal-header">
-                  <!-- Header -->
                   <div id="addTaskDiv">
                     <div
                       class="container d-flex justify-content-center"
@@ -55,20 +56,14 @@
                     <!-- Add Task Form -->
                     <form action="#" method="#">
                       <div class="container" id="taskFormBox">
-                        <!-- Delete button -->
                         <div class="row justify-content-end">
-                          <button
-                            type="button submit"
-                            class="btn btn-danger btn-sm col-2 m-2"
-                          >
-                            Delete
-                          </button>
+                          <!-- For Successful Submit -->
+                          <h5 id="successfulSubmitMsg"></h5>
                         </div>
 
-                        <!-- Add task header & description -->
+                        <!-- Task Name -->
                         <div class="row">
                           <div class="mb-3">
-                            <!-- Error span -->
                             <span class="errorSpan" id="taskNameError"></span>
                             <input
                               type="text"
@@ -79,8 +74,9 @@
                               required
                             />
                           </div>
+
+                          <!-- Task Description -->
                           <div class="mb-3">
-                            <!-- Error span -->
                             <span
                               class="errorSpan"
                               id="taskDescriptionError"
@@ -96,7 +92,8 @@
                             ></textarea>
                           </div>
                         </div>
-                        <!-- Assign Dropdown Menu -->
+
+                        <!-- Task Assign  -->
                         <div class="row">
                           <div class="mb-3">
                             <span class="errorSpan" id="taskAssignError"></span>
@@ -110,7 +107,8 @@
                             />
                           </div>
                         </div>
-                        <!-- Due date Dropdown Menu -->
+
+                        <!-- Due date  Menu -->
                         <div class="row">
                           <span class="errorSpan" id="dueDateError"></span>
                           <div class="mb-3">
@@ -124,7 +122,8 @@
                             />
                           </div>
                         </div>
-                        <!-- Priority Dropdown Menu -->
+
+                        <!-- Task Priority Dropdown Menu -->
                         <div class="row">
                           <div class="mb-3">
                             <label for="taskPriority">Priority</label>
@@ -143,7 +142,7 @@
                           </div>
                         </div>
 
-                        <!-- Status Dropdown Menu -->
+                        <!--Task  Status Dropdown Menu -->
                         <div class="row">
                           <div class="mb-3">
                             <label for="taskStatus">Status</label>
@@ -164,6 +163,8 @@
                     </form>
                   </div>
                 </div>
+
+                <!-- Submit/Close Buttons -->
                 <div class="modal-footer">
                   <button
                     type="button"
@@ -178,7 +179,7 @@
                     class="btn btn-primary"
                     id="submitTaskFormBtn"
                   >
-                    Save changes
+                    Submit
                   </button>
                 </div>
               </div>
