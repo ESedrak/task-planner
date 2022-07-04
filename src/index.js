@@ -113,6 +113,8 @@ const validateTaskForm = () => {
     let z = document.createElement("div");
     z.innerHTML = createCard(tasksManagerArray[tasksManagerArray.length - 1]);
 
+console.log(typeof tasksManagerArray[tasksManagerArray.length - 1].id);
+
     // Sort cards into correct Status column
     if (taskStatus.value === "toDo") {
       document.querySelector("#toDoList").appendChild(z);
@@ -146,9 +148,14 @@ const validateTaskForm = () => {
       successMsg.innerHTML = "";
     }, 3000);
   }
+  document.querySelector(`#taskDeleteBtn${tasksManagerArray[tasksManagerArray.length - 1].id}`).addEventListener('click', () => {
+    const element = document.querySelector(`#card${tasksManagerArray[tasksManagerArray.length - 1].id}`);
+    element.remove();
+  });
 };
 
 submitTaskFormBtn.addEventListener("click", validateTaskForm);
+
 
 // showCurrentTime/Date
 const zeroFill = (n) => {
