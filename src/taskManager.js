@@ -60,6 +60,8 @@ function createCard(array) {
                     <h6 class="card-subtitle mb-2 text-muted">Due Date: ${array.dueDate}</h6>
                     <p class="card-text">Priority: ${array.taskPriority}</p>
                     <button type="button submit" class="btn btn-danger removeMe" id="taskDeleteBtn${array.id}"> Delete </button>
+                    <button type="button submit" class="btn btn-primary " id="taskEditBtn${array.id}"> Edit </button>
+                    <button type="button submit" class="btn btn-success " id="taskDoneBtn${array.id}"> Done </button>
                   </div>
                 </div>
               </div>
