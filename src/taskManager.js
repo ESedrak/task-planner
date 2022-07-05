@@ -41,11 +41,12 @@ class TaskManager {
             this.tasks.splice(task, 1);
           });
       }
-      // Done card
+      // Completed Task
       document
         .querySelector(`#taskDoneBtn${task.id}`)
         .addEventListener("click", () => {
-          taskStatus.value = "completed";
+          task.taskStatus = "complete";
+          console.log(task.taskStatus);
           document.querySelector("#completed").appendChild(z);
         });
 
