@@ -116,18 +116,11 @@ const validateTaskForm = () => {
       successMsg.innerHTML = "";
     }, 3000);
   }
-  document
-    .querySelector(
-      `#taskDeleteBtn${tasksManagerArray[tasksManagerArray.length - 1].id}`
-    )
-    .addEventListener("click", () => {
-      document
-        .querySelector(
-          `#card${tasksManagerArray[tasksManagerArray.length - 1].id}`
-        )
-        .remove();
+  for (let i=0; i<tasksManagerArray.length; i++){
+    document.querySelector(`#taskDeleteBtn${tasksManagerArray[i].id}`).addEventListener("click", () => {
+      document.querySelector(`#card${tasksManagerArray[i].id}`).remove();
     });
-
+  }
   // reset everything once submitted successfully
   // Values
   taskName.value = "";
