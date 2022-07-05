@@ -115,27 +115,30 @@ const validateTaskForm = () => {
     setTimeout(() => {
       successMsg.innerHTML = "";
     }, 3000);
+    // reset everything once submitted successfully
+    // Values
+    taskName.value = "";
+    taskDescription.value = "";
+    taskAssign.value = "";
+    dueDate.value = "";
+    taskPriority.value = "Low";
+    taskStatus.value = "toDo";
+    // Styles
+    taskName.classList.remove("successStyle");
+    taskDescription.classList.remove("successStyle");
+    taskAssign.classList.remove("successStyle");
+    dueDate.classList.remove("successStyle");
+    taskPriority.classList.remove("successStyle");
+    taskStatus.classList.remove("successStyle");
   }
-  for (let i=0; i<tasksManagerArray.length; i++){
-    document.querySelector(`#taskDeleteBtn${tasksManagerArray[i].id}`).addEventListener("click", () => {
-      document.querySelector(`#card${tasksManagerArray[i].id}`).remove();
-    });
+
+  for (let i = 0; i < tasksManagerArray.length; i++) {
+    document
+      .querySelector(`#taskDeleteBtn${tasksManagerArray[i].id}`)
+      .addEventListener("click", () => {
+        document.querySelector(`#card${tasksManagerArray[i].id}`).remove();
+      });
   }
-  // reset everything once submitted successfully
-  // Values
-  taskName.value = "";
-  taskDescription.value = "";
-  taskAssign.value = "";
-  dueDate.value = "";
-  taskPriority.value = "Low";
-  taskStatus.value = "toDo";
-  // Styles
-  taskName.classList.remove("successStyle");
-  taskDescription.classList.remove("successStyle");
-  taskAssign.classList.remove("successStyle");
-  dueDate.classList.remove("successStyle");
-  taskPriority.classList.remove("successStyle");
-  taskStatus.classList.remove("successStyle");
 };
 
 submitTaskFormBtn.addEventListener("click", validateTaskForm);
