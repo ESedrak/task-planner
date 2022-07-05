@@ -110,6 +110,11 @@ const validateTaskForm = () => {
     );
     console.log(tasksManagerArray);
     tasksManager.render();
+    // Display Successful Message for 3 seconds
+    successMsg.innerHTML = "Submitted Successfully";
+    setTimeout(() => {
+      successMsg.innerHTML = "";
+    }, 3000);
   }
   document
     .querySelector(
@@ -138,12 +143,6 @@ const validateTaskForm = () => {
   dueDate.classList.remove("successStyle");
   taskPriority.classList.remove("successStyle");
   taskStatus.classList.remove("successStyle");
-
-  // Display Successful Message for 3 seconds
-  successMsg.innerHTML = "Submitted Successfully";
-  setTimeout(() => {
-    successMsg.innerHTML = "";
-  }, 3000);
 };
 
 submitTaskFormBtn.addEventListener("click", validateTaskForm);
