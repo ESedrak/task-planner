@@ -26,40 +26,51 @@ class TaskManager {
     this.tasks.push(task);
   }
 
+  // Render the tasks
   render() {
     this.tasks.forEach((task) => {
-      let z = document.createElement("div");
+      let oneTask = document.createElement("div");
       if (task.DOMrender === false) {
-        z.innerHTML = createCard(task);
-        document.body.appendChild(z);
+        oneTask.innerHTML = createCard(task);
+        document.body.appendChild(oneTask);
         task.DOMrender = !task.DOMrender;
+
         // To delete Task Card from DOM
-        document
-          .querySelector(`#taskDeleteBtn${task.id}`)
-          .addEventListener("click", () => {
-            document.querySelector(`#card${task.id}`).remove();
-            this.tasks.splice(task, 1);
-          });
+        this.deleteTask(task);
       }
+
       // Completed Task
       document
         .querySelector(`#taskDoneBtn${task.id}`)
         .addEventListener("click", () => {
           task.taskStatus = "complete";
-          console.log(task.taskStatus);
-          document.querySelector("#completed").appendChild(z);
+          document.querySelector("#completed").appendChild(oneTask);
+          document
+            .querySelector(`#taskDoneBtn${task.id}`)
+            .setAttribute("hidden", "");
         });
 
+      // Sort into columns
       if (taskStatus.value === "toDo") {
-        document.querySelector("#toDoList").appendChild(z);
+        document.querySelector("#toDoList").appendChild(oneTask);
       } else if (taskStatus.value === "inProgress") {
-        document.querySelector("#inProgress").appendChild(z);
+        document.querySelector("#inProgress").appendChild(oneTask);
       } else if (taskStatus.value === "review") {
-        document.querySelector("#review").appendChild(z);
+        document.querySelector("#review").appendChild(oneTask);
       } else if ((taskStatus.value = "complete")) {
-        document.querySelector("#completed").appendChild(z);
+        document.querySelector("#completed").appendChild(oneTask);
       }
     });
+  }
+
+  //
+  deleteTask(task) {
+    document
+      .querySelector(`#taskDeleteBtn${task.id}`)
+      .addEventListener("click", () => {
+        document.querySelector(`#card${task.id}`).remove();
+        this.tasks.splice(task, 1);
+      });
   }
 }
 
@@ -75,7 +86,6 @@ function createCard(array) {
                     <h6 class="card-subtitle mb-2 text-muted">Due Date: ${array.dueDate}</h6>
                     <p class="card-text">Priority: ${array.taskPriority}</p>
                     <button type="button submit" class="btn btn-danger removeMe" id="taskDeleteBtn${array.id}"> Delete </button>
-                    <button type="button submit" class="btn btn-primary " id="taskEditBtn${array.id}"> Edit </button>
                     <button type="button submit" class="btn btn-success " id="taskDoneBtn${array.id}"> Done </button>
                   </div>
                 </div>

@@ -110,11 +110,18 @@ const validateTaskForm = () => {
     );
     // console.log(tasksManagerArray);
     tasksManager.render();
+
     // Display Successful Message for 3 seconds
     successMsg.innerHTML = "Submitted Successfully";
     setTimeout(() => {
       successMsg.innerHTML = "";
     }, 3000);
+
+    // Reset Values
+    resetValues();
+  }
+
+  function resetValues() {
     // reset everything once submitted successfully
     // Values
     taskName.value = "";
