@@ -33,6 +33,13 @@ class TaskManager {
       z.innerHTML = createCard(task);
       document.body.appendChild(z);
       task.DOMrender = !task.DOMrender;
+      // To delete Task Card from DOM
+      document.querySelector(`#taskDeleteBtn${task.id}`)
+      .addEventListener("click", () => {
+        document.querySelector(`#card${task.id}`).remove();
+        this.tasks.splice(task,1);
+        console.log(this.tasks);
+      });
     }
 
       if (taskStatus.value === "toDo") {

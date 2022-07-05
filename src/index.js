@@ -132,13 +132,7 @@ const validateTaskForm = () => {
     taskStatus.classList.remove("successStyle");
   }
 
-  for (let i = 0; i < tasksManagerArray.length; i++) {
-    document
-      .querySelector(`#taskDeleteBtn${tasksManagerArray[i].id}`)
-      .addEventListener("click", () => {
-        document.querySelector(`#card${tasksManagerArray[i].id}`).remove();
-      });
-  }
+
 };
 
 submitTaskFormBtn.addEventListener("click", validateTaskForm);
