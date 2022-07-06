@@ -4,7 +4,6 @@ class TaskManager {
     this.tasks = [];
     this.DOMrender = false;
   }
-
   addTask(
     taskName,
     taskDescription,
@@ -24,34 +23,36 @@ class TaskManager {
       DOMrender: this.DOMrender,
     };
     this.tasks.push(task);
+    console.log(task)
+    // Render task
+    this.render(task)
     this.updateCache();
   }
-
   // Render the tasks
-  render() {
-    this.tasks.forEach((task) => {
+  render(task) {
+    console.log("My Tasks: ", this.tasks)
+      console.log("rendering: ", task)
       let oneTask = document.createElement("div");
       if (task.DOMrender === false) {
+        console.log("Im firing")
         oneTask.innerHTML = createCard(task);
         document.body.appendChild(oneTask);
+        console.log(task)
         task.DOMrender = !task.DOMrender;
-
+        // Completed Task
+        document
+          .querySelector(`#taskDoneBtn${task.id}`)
+          .addEventListener("click", () => {
+            task.taskStatus = "complete";
+            this.updateCache();
+            document.querySelector("#completed").appendChild(oneTask);
+            document
+              .querySelector(`#taskDoneBtn${task.id}`)
+              .setAttribute("hidden", "");
+          });
         // To delete Task Card from DOM
         this.deleteTask(task.id);
       }
-
-      // Completed Task
-      document
-        .querySelector(`#taskDoneBtn${task.id}`)
-        .addEventListener("click", () => {
-          task.taskStatus = "complete";
-          this.updateCache();
-          document.querySelector("#completed").appendChild(oneTask);
-          document
-            .querySelector(`#taskDoneBtn${task.id}`)
-            .setAttribute("hidden", "");
-        });
-
       // Sort into columns
       if ((task.taskStatus === "toDo")) {
         document.querySelector("#toDoList").appendChild(oneTask);
@@ -62,16 +63,13 @@ class TaskManager {
       } else if ((task.taskStatus === "complete")) {
         document.querySelector("#completed").appendChild(oneTask);
       }
-    });
     this.updateCache();
   }
-
   // Get All Tasks
   getTask() {
     const getAllTasks = this.tasks;
     return getAllTasks;
   }
-
   // Get Tasks By Status
   getTasksWithStatus(status) {
     const getTaskStatus = [];
@@ -87,14 +85,11 @@ class TaskManager {
       } else if (taskStatus === "complete") {
         document.querySelector("#completed").appendChild(oneTask);
       }
-
       console.log(taskStatus);
       getTaskStatus.push(taskStatus);
     }
-
     return getTaskStatus;
   }
-
   //Delete Task!
   deleteTask(id) {
     console.log(id);
@@ -102,12 +97,11 @@ class TaskManager {
       .querySelector(`#taskDeleteBtn${id}`)
       .addEventListener("click", () => {
         document.querySelector(`#card${id}`).remove();
-        console.log(this.tasks);
         this.tasks.splice(id, 1);
         console.log(this.tasks);
         // delete this.tasks[id];
         this.updateCache();
-        this.render();
+        // this.render();
       });
   }
   // Update localStorage with current array of tasks
@@ -116,13 +110,10 @@ class TaskManager {
     console.log("Cache has been updated!");
     console.log(localStorage.getItem("storedTasks"));
   }
-
   getCache() {
     const tasksInStorage = localStorage.getItem("storedTasks");
     if (tasksInStorage) {
       const myTask = JSON.parse(tasksInStorage);
-      console.log(myTask);
-      if(typeof tasksInStorage === Array){
       myTask.forEach((task) => {
         this.addTask(
           task.taskName,
@@ -132,19 +123,10 @@ class TaskManager {
           task.taskPriority,
           task.taskStatus
         );
-      })} else {
-        this.addTask( myTask.taskName,
-          myTask.taskDescription,
-          myTask.taskAssign,
-          myTask.dueDate,
-          myTask.taskPriority,
-          myTask.taskStatus)
-      }
-      return myTask;
+      });
     }
   }
 }
-
 function createCard(array) {
   const oneCard = `
             <div class="oneTask" id="card${array.id}">
@@ -163,6 +145,5 @@ function createCard(array) {
               </div>
             </div>
           `;
-
   return oneCard;
 }

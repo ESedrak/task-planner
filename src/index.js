@@ -1,7 +1,7 @@
 const tasksManager = new TaskManager();
 const tasksManagerArray = tasksManager.tasks;
 tasksManager.getCache();
-tasksManager.render();
+// tasksManager.render();
 
 // addTask Form
 const taskName = document.querySelector("#taskName");
@@ -111,7 +111,7 @@ const validateTaskForm = () => {
       taskStatus.value
     );
     // console.log(tasksManagerArray);
-    tasksManager.render();
+    // tasksManager.render();
 
     // Display Successful Message for 3 seconds
     successMsg.innerHTML = "Submitted Successfully";
