@@ -36,7 +36,7 @@ class TaskManager {
         task.DOMrender = !task.DOMrender;
 
         // To delete Task Card from DOM
-        this.deleteTask(task);
+        this.deleteTask(task.id);
       }
 
       // Completed Task
@@ -63,13 +63,13 @@ class TaskManager {
     });
   }
 
-  //
-  deleteTask(task) {
+  //Delete Task!
+  deleteTask(id) {
     document
-      .querySelector(`#taskDeleteBtn${task.id}`)
+      .querySelector(`#taskDeleteBtn${id}`)
       .addEventListener("click", () => {
-        document.querySelector(`#card${task.id}`).remove();
-        this.tasks.splice(task, 1);
+        document.querySelector(`#card${id}`).remove();
+        this.tasks.splice(id, 1);
       });
   }
 }
