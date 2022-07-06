@@ -65,6 +65,24 @@ class TaskManager {
     });
   }
 
+  // Get All Tasks
+  getTask() {
+    const getAllTasks = this.tasks;
+    return getAllTasks;
+  }
+
+  // Get Tasks By Status
+  getTasksWithStatus(status) {
+    const getTaskStatus = [];
+
+    for (let i = 0; i < this.getTask().length; i++) {
+      const taskStatus = this.getTask()[i].taskStatus;
+      getTaskStatus.push(taskStatus);
+    }
+
+    return getTaskStatus;
+  }
+
   //Delete Task!
   deleteTask(id) {
     document
@@ -80,10 +98,27 @@ class TaskManager {
     localStorage.setItem("storedTasks", JSON.stringify(this.tasks));
     console.log("Cache has been updated!");
     console.log(localStorage.getItem("storedTasks"));
-  };
+  }
 
-};
-
+  getCache() {
+    const tasksInStorage = localStorage.getItem("storedTasks");
+    if (tasksInStorage) {
+      const myTask = JSON.parse(tasksInStorage);
+      console.log(myTask);
+      myTask.forEach((task) => {
+        this.addTask(
+          task.taskName,
+          task.taskDescription,
+          task.taskAssign,
+          task.dueDate,
+          task.taskPriority,
+          task.taskStatus
+        );
+      });
+      return myTask;
+    }
+  }
+}
 
 function createCard(array) {
   const oneCard = `
