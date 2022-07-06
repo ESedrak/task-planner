@@ -53,16 +53,17 @@ class TaskManager {
         });
 
       // Sort into columns
-      if (taskStatus.value === "toDo") {
+      if ((task.taskStatus = "toDo")) {
         document.querySelector("#toDoList").appendChild(oneTask);
-      } else if (taskStatus.value === "inProgress") {
+      } else if ((task.taskStatus = "inProgress")) {
         document.querySelector("#inProgress").appendChild(oneTask);
-      } else if (taskStatus.value === "review") {
+      } else if ((task.taskStatus = "review")) {
         document.querySelector("#review").appendChild(oneTask);
-      } else if ((taskStatus.value = "complete")) {
+      } else if ((task.taskStatus = "complete")) {
         document.querySelector("#completed").appendChild(oneTask);
       }
     });
+    this.updateCache();
   }
 
   // Get All Tasks
@@ -74,9 +75,20 @@ class TaskManager {
   // Get Tasks By Status
   getTasksWithStatus(status) {
     const getTaskStatus = [];
-
+    // test here
     for (let i = 0; i < this.getTask().length; i++) {
       const taskStatus = this.getTask()[i].taskStatus;
+      if (taskStatus === "toDo") {
+        document.querySelector("#toDoList").appendChild(oneTask);
+      } else if (taskStatus === "inProgress") {
+        document.querySelector("#inProgress").appendChild(oneTask);
+      } else if (taskStatus === "review") {
+        document.querySelector("#review").appendChild(oneTask);
+      } else if (taskStatus === "complete") {
+        document.querySelector("#completed").appendChild(oneTask);
+      }
+
+      console.log(taskStatus);
       getTaskStatus.push(taskStatus);
     }
 

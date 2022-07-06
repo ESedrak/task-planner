@@ -1,7 +1,7 @@
 const tasksManager = new TaskManager();
 const tasksManagerArray = tasksManager.tasks;
 tasksManager.getCache();
-// tasksManager.render();
+tasksManager.render();
 
 // addTask Form
 const taskName = document.querySelector("#taskName");
