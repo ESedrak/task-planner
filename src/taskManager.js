@@ -24,6 +24,7 @@ class TaskManager {
       DOMrender: this.DOMrender,
     };
     this.tasks.push(task);
+    this.updateCache();
   }
 
   // Render the tasks
@@ -44,6 +45,7 @@ class TaskManager {
         .querySelector(`#taskDoneBtn${task.id}`)
         .addEventListener("click", () => {
           task.taskStatus = "complete";
+          this.updateCache();
           document.querySelector("#completed").appendChild(oneTask);
           document
             .querySelector(`#taskDoneBtn${task.id}`)
@@ -70,9 +72,18 @@ class TaskManager {
       .addEventListener("click", () => {
         document.querySelector(`#card${id}`).remove();
         this.tasks.splice(id, 1);
+        this.updateCache();
       });
   }
-}
+  // Update localStorage with current array of tasks
+  updateCache() {
+    localStorage.setItem("storedTasks", JSON.stringify(this.tasks));
+    console.log("Cache has been updated!");
+    console.log(localStorage.getItem("storedTasks"));
+  };
+
+};
+
 
 function createCard(array) {
   const oneCard = `
