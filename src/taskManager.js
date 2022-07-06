@@ -23,87 +23,93 @@ class TaskManager {
       DOMrender: this.DOMrender,
     };
     this.tasks.push(task);
-    console.log(task)
+    console.log(task);
     // Render task
-    this.render(task)
+    this.render(task);
     this.updateCache();
   }
   // Render the tasks
   render(task) {
-    console.log("My Tasks: ", this.tasks)
-      console.log("rendering: ", task)
-      let oneTask = document.createElement("div");
-      if (task.DOMrender === false) {
-        console.log("Im firing")
-        oneTask.innerHTML = createCard(task);
-        document.body.appendChild(oneTask);
-        console.log(task)
-        task.DOMrender = !task.DOMrender;
-        // Completed Task
-        document
-          .querySelector(`#taskDoneBtn${task.id}`)
-          .addEventListener("click", () => {
-            task.taskStatus = "complete";
-            this.updateCache();
-            document.querySelector("#completed").appendChild(oneTask);
-            document
-              .querySelector(`#taskDoneBtn${task.id}`)
-              .setAttribute("hidden", "");
-          });
-        // To delete Task Card from DOM
-        this.deleteTask(task.id);
-      }
-      // Sort into columns
-      if ((task.taskStatus === "toDo")) {
-        document.querySelector("#toDoList").appendChild(oneTask);
-      } else if ((task.taskStatus === "inProgress")) {
-        document.querySelector("#inProgress").appendChild(oneTask);
-      } else if ((task.taskStatus === "review")) {
-        document.querySelector("#review").appendChild(oneTask);
-      } else if ((task.taskStatus === "complete")) {
-        document.querySelector("#completed").appendChild(oneTask);
-      }
+    console.log("My Tasks: ", this.tasks);
+    console.log("rendering: ", task);
+    let oneTask = document.createElement("div");
+    if (task.DOMrender === false) {
+      console.log("Im firing");
+      oneTask.innerHTML = createCard(task);
+      document.body.appendChild(oneTask);
+      console.log(task);
+      task.DOMrender = !task.DOMrender;
+
+      // Completed Task
+      this.completedTasks(task, oneTask);
+
+      // To delete Task Card from DOM
+      this.deleteTask(task.id);
+    }
+    // Sort into columns
+    this.getTasksWithStatus(task.taskStatus, oneTask);
+
     this.updateCache();
   }
+
   // Get All Tasks
   getTask() {
     const getAllTasks = this.tasks;
     return getAllTasks;
   }
+
+  // Completed Tasks
+  completedTasks(task, oneTask) {
+    document
+      .querySelector(`#taskDoneBtn${task.id}`)
+      .addEventListener("click", () => {
+        task.taskStatus = "complete";
+        this.updateCache();
+        document.querySelector("#completed").appendChild(oneTask);
+        document
+          .querySelector(`#taskDoneBtn${task.id}`)
+          .setAttribute("hidden", "");
+      });
+  }
+
   // Get Tasks By Status
-  getTasksWithStatus(status) {
+  getTasksWithStatus(status, oneTask) {
     const getTaskStatus = [];
-    // test here
+
     for (let i = 0; i < this.getTask().length; i++) {
       const taskStatus = this.getTask()[i].taskStatus;
-      if (taskStatus === "toDo") {
+      if (status === "toDo") {
         document.querySelector("#toDoList").appendChild(oneTask);
-      } else if (taskStatus === "inProgress") {
+      } else if (status === "inProgress") {
         document.querySelector("#inProgress").appendChild(oneTask);
-      } else if (taskStatus === "review") {
+      } else if (status === "review") {
         document.querySelector("#review").appendChild(oneTask);
-      } else if (taskStatus === "complete") {
+      } else if (status === "complete") {
         document.querySelector("#completed").appendChild(oneTask);
       }
-      console.log(taskStatus);
+
+      this.updateCache();
       getTaskStatus.push(taskStatus);
     }
+
     return getTaskStatus;
   }
+
   //Delete Task!
   deleteTask(id) {
     console.log(id);
     document
       .querySelector(`#taskDeleteBtn${id}`)
       .addEventListener("click", () => {
-        document.querySelector(`#card${id}`).remove();
         this.tasks.splice(id, 1);
+        document.querySelector(`#card${id}`).remove();
         console.log(this.tasks);
         // delete this.tasks[id];
         this.updateCache();
         // this.render();
       });
   }
+
   // Update localStorage with current array of tasks
   updateCache() {
     localStorage.setItem("storedTasks", JSON.stringify(this.tasks));
