@@ -53,13 +53,13 @@ class TaskManager {
         });
 
       // Sort into columns
-      if ((task.taskStatus = "toDo")) {
+      if ((task.taskStatus === "toDo")) {
         document.querySelector("#toDoList").appendChild(oneTask);
-      } else if ((task.taskStatus = "inProgress")) {
+      } else if ((task.taskStatus === "inProgress")) {
         document.querySelector("#inProgress").appendChild(oneTask);
-      } else if ((task.taskStatus = "review")) {
+      } else if ((task.taskStatus === "review")) {
         document.querySelector("#review").appendChild(oneTask);
-      } else if ((task.taskStatus = "complete")) {
+      } else if ((task.taskStatus === "complete")) {
         document.querySelector("#completed").appendChild(oneTask);
       }
     });
@@ -97,12 +97,17 @@ class TaskManager {
 
   //Delete Task!
   deleteTask(id) {
+    console.log(id);
     document
       .querySelector(`#taskDeleteBtn${id}`)
       .addEventListener("click", () => {
         document.querySelector(`#card${id}`).remove();
+        console.log(this.tasks);
         this.tasks.splice(id, 1);
+        console.log(this.tasks);
+        // delete this.tasks[id];
         this.updateCache();
+        this.render();
       });
   }
   // Update localStorage with current array of tasks
@@ -117,6 +122,7 @@ class TaskManager {
     if (tasksInStorage) {
       const myTask = JSON.parse(tasksInStorage);
       console.log(myTask);
+      if(typeof tasksInStorage === Array){
       myTask.forEach((task) => {
         this.addTask(
           task.taskName,
@@ -126,7 +132,14 @@ class TaskManager {
           task.taskPriority,
           task.taskStatus
         );
-      });
+      })} else {
+        this.addTask( myTask.taskName,
+          myTask.taskDescription,
+          myTask.taskAssign,
+          myTask.dueDate,
+          myTask.taskPriority,
+          myTask.taskStatus)
+      }
       return myTask;
     }
   }
