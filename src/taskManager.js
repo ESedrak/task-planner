@@ -23,21 +23,22 @@ class TaskManager {
       DOMrender: this.DOMrender,
     };
     this.tasks.push(task);
-    console.log(task);
+    // console.log(task);
     // Render task
     this.render(task);
     this.updateCache();
   }
+
   // Render the tasks
   render(task) {
-    console.log("My Tasks: ", this.tasks);
-    console.log("rendering: ", task);
+    // console.log("My Tasks: ", this.tasks);
+    // console.log("rendering: ", task);
     let oneTask = document.createElement("div");
     if (task.DOMrender === false) {
-      console.log("Im firing");
+      // console.log("Im firing");
       oneTask.innerHTML = createCard(task);
       document.body.appendChild(oneTask);
-      console.log(task);
+      // console.log(task);
       task.DOMrender = !task.DOMrender;
 
       // Completed Task
@@ -58,24 +59,11 @@ class TaskManager {
     return getAllTasks;
   }
 
-  // Completed Tasks
-  completedTasks(task, oneTask) {
-    document
-      .querySelector(`#taskDoneBtn${task.id}`)
-      .addEventListener("click", () => {
-        task.taskStatus = "complete";
-        this.updateCache();
-        document.querySelector("#completed").appendChild(oneTask);
-        document
-          .querySelector(`#taskDoneBtn${task.id}`)
-          .setAttribute("hidden", "");
-      });
-  }
-
+  
   // Get Tasks By Status
   getTasksWithStatus(status, oneTask) {
     const getTaskStatus = [];
-
+    
     for (let i = 0; i < this.getTask().length; i++) {
       const taskStatus = this.getTask()[i].taskStatus;
       if (status === "toDo") {
@@ -87,17 +75,31 @@ class TaskManager {
       } else if (status === "complete") {
         document.querySelector("#completed").appendChild(oneTask);
       }
-
-      this.updateCache();
+      
       getTaskStatus.push(taskStatus);
+      this.updateCache();
     }
-
+    
     return getTaskStatus;
   }
 
+  // Completed Tasks
+  completedTasks(task, oneTask) {
+    document
+      .querySelector(`#taskDoneBtn${task.id}`)
+      .addEventListener("click", () => {
+        task.taskStatus = "complete";
+        document.querySelector("#completed").appendChild(oneTask);
+        document
+        .querySelector(`#taskDoneBtn${task.id}`)
+        .setAttribute("hidden", "");
+        this.updateCache();
+      });
+  }
+  
   //Delete Task!
   deleteTask(id) {
-    console.log(id);
+    // console.log(id);
     document
       .querySelector(`#taskDeleteBtn${id}`)
       .addEventListener("click", () => {
@@ -115,9 +117,10 @@ class TaskManager {
   // Update localStorage with current array of tasks
   updateCache() {
     localStorage.setItem("storedTasks", JSON.stringify(this.tasks));
-    console.log("Cache has been updated!");
-    console.log(localStorage.getItem("storedTasks"));
+    // console.log("Cache has been updated!");
+    // console.log(localStorage.getItem("storedTasks"));
   }
+
   getCache() {
     const tasksInStorage = localStorage.getItem("storedTasks");
     if (tasksInStorage) {
@@ -135,6 +138,7 @@ class TaskManager {
     }
   }
 }
+
 function createCard(array) {
   const oneCard = `
             <div class="oneTask" id="card${array.id}">
