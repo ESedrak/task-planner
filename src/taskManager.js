@@ -101,12 +101,14 @@ class TaskManager {
     document
       .querySelector(`#taskDeleteBtn${id}`)
       .addEventListener("click", () => {
-        this.tasks.splice(id, 1);
+        for (let i=0; i<this.tasks.length;i++){
+          if(this.tasks[i].id === id){
+            this.tasks.splice(i, 1);
+            this.updateCache();
+          }
+          
+        }
         document.querySelector(`#card${id}`).remove();
-        console.log(this.tasks);
-        // delete this.tasks[id];
-        this.updateCache();
-        // this.render();
       });
   }
 
