@@ -143,9 +143,9 @@ function createCard(array) {
                   <div class="card-body">
                     <h5 class="card-title">${array.taskName}</h5>
                     <p class="card-text"> ${array.taskDescription}</p>
-                    <p class="card-text">Assigned to: ${array.taskAssign}</p>
-                    <h6 class="card-subtitle mb-2 text-muted">Due Date: ${array.dueDate}</h6>
-                    <p class="card-text">Priority: ${array.taskPriority}</p>
+                    <p class="card-text"><b>Assigned to:</b> ${array.taskAssign}</p>
+                    <h6 class="card-subtitle mb-2 text-muted"><b>Due Date:</b> ${array.dueDate}</h6>
+                    <p class="card-text"><b>Priority:</b> ${array.taskPriority}</p>
                     <button type="button submit" class="btn btn-danger removeMe" id="taskDeleteBtn${array.id}"> Delete </button>
                     <button type="button submit" class="btn btn-success " id="taskDoneBtn${array.id}"> Done </button>
                   </div>
