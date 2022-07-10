@@ -1,15 +1,15 @@
 /* global css */
 body {
-  background-color: beige;
+  background-color: lightyellow;
 }
 
 /* Main site */
 
 /* header */
 header {
-  background-color: powderblue;
+  background-color: paleturquoise;
   padding: 1em;
-  border: 5px solid whitesmoke;
+  border: 8px solid whitesmoke;
 }
 
 #siteHeader {
