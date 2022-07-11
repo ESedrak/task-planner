@@ -30,7 +30,7 @@ header span {
 
 .mainSubHeader {
   text-align: center;
-  padding-top: 1rem;
+  padding: 1rem;
 }
 
 
@@ -50,9 +50,14 @@ section {
 }
 
 #toDoList {
-  border: 5px solid yellow;
+  border: 5px solid lightsalmon;
   max-width: 320px  ;
   background-color: whitesmoke;
+}
+
+#toDoList h4{
+  background-color: lightsalmon;
+  color: white;
 }
 
 #inProgress {
@@ -61,16 +66,32 @@ section {
   background-color: whitesmoke;
 }
 
+#inProgress h4{
+  background-color: yellowgreen;
+  color: white;
+}
+
 #review {
   border: 5px solid plum;
   max-width: 320px  ;
   background-color: whitesmoke;
 }
 
+#review h4{
+  background-color: plum;
+  color: white;
+}
+
 #completed {
-  border: 5px solid blue;
+  border: 5px solid lightskyblue;
   max-width: 320px  ;
   background-color: whitesmoke;
+}
+
+#completed h4{
+  color: white;
+  background-color: lightskyblue;
+  padding-bottom: 1rem;
 }
 
 /* Add Task section */
@@ -117,7 +138,7 @@ label {
   max-width: 275px;
   margin: 20px auto;
   transition: 1s;
-  border: 2px solid orange;
+  border: 3px solid lightgrey;
 }
 
 .card:hover {
@@ -128,14 +149,14 @@ label {
 /* SuccessfulSubmit */
 #successfulSubmitMsg {
   text-align: center;
-  color: lightgreen;
+  color: rgb(48, 192, 48);
   padding: 0.3em;
 }
 
 /* Success Submit */
 .successStyle {
   border-width: thick;
-  border-color: lightgreen;
+  border-color: rgb(36, 166, 36);
 }
 
 /* Error Submit */
