@@ -1,11 +1,17 @@
-/* global css */
+/* Global css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-color: lightyellow;
 }
 
-/* Main site */
+/* Main Site Section */
 
-/* header */
+/* Header */
 header {
   background-color: paleturquoise;
   padding: 1em;
@@ -33,16 +39,12 @@ header span {
   padding: 1rem;
 }
 
-/* button */
-#addTaskBtn {
-  color: black;
-  background-color: lightskyblue;
-  border: 5px solid pink;
-  padding: 0.5em;
-  margin: 0.5em;
+/* Date/Time information */
+#date-time {
+  color: white;
 }
 
-/* each section */
+/* Each section */
 section {
   margin: 5px auto;
   min-height: 40em;
@@ -93,9 +95,33 @@ section {
   padding-bottom: 1rem;
 }
 
-/* Add Task section */
-#taskFormBox,
-#addNameForm {
+/* One Task */
+.card {
+  max-width: 275px;
+  margin: 20px auto;
+  transition: 1s;
+  border: 3px solid lightgrey;
+}
+
+.card:hover {
+  background-color: rgb(255, 244, 254);
+  transform: scale(1.1);
+}
+
+/* Add Task Button */
+#addTaskBtn {
+  color: black;
+  background-color: lightskyblue;
+  border: 5px solid pink;
+  padding: 0.5em;
+  margin: 0.5em;
+}
+
+/* Modal Section */
+
+/* Task Form */
+
+#taskFormBox {
   border: solid 1px orange;
   position: relative;
   top: 1rem;
@@ -112,40 +138,18 @@ section {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-/* Form Labels */
-label {
-  color: whitesmoke;
-}
-
 /* Submit Form Buttons */
 #submitTaskFormBtn {
   background-color: yellowgreen;
   border: solid 3px rgb(254, 175, 28);
 }
+
 #cancelTaskFormBtn {
   background-color: #9f86c0;
   border: solid 3px orange;
 }
 
-/* Date/Time information */
-#date-time {
-  color: white;
-}
-
-/* One Card */
-.card {
-  max-width: 275px;
-  margin: 20px auto;
-  transition: 1s;
-  border: 3px solid lightgrey;
-}
-
-.card:hover {
-  background-color: rgb(255, 244, 254);
-  transform: scale(1.1);
-}
-
-/* SuccessfulSubmit */
+/* Successful Submit */
 #successfulSubmitMsg {
   text-align: center;
   font-weight: 900;
@@ -153,7 +157,6 @@ label {
   padding: 0.3em;
 }
 
-/* Success Submit */
 .successStyle {
   border-width: thick;
   border-color: greenyellow;
@@ -165,7 +168,6 @@ label {
   border-color: rgb(245, 22, 22);
 }
 
-/* Error spans */
 .errorSpan {
   font-weight: 900;
   color: rgb(245, 22, 22);
