@@ -24,33 +24,31 @@ class TaskManager {
     };
     this.tasks.push(task);
     // console.log(task);
-    // Render task
     this.render(task);
     this.updateCache();
   }
 
   // Render the tasks
   render(task) {
-    // console.log("My Tasks: ", this.tasks);
-    // console.log("rendering: ", task);
+    // console.log("Rendering: ", task);
     let oneTask = document.createElement("div");
     if (task.DOMrender === false) {
-      // console.log("Im firing");
       oneTask.innerHTML = createCard(task);
       document.body.appendChild(oneTask);
       // console.log(task);
       task.DOMrender = !task.DOMrender;
 
-      // Completed Task
-      this.completedTasks(task, oneTask);
-
       // To delete Task Card from DOM
       this.deleteTask(task.id);
-    }
-    // Sort into columns
-    this.getTasksWithStatus(task.taskStatus, oneTask);
 
-    this.updateCache();
+      // Sort into columns
+      this.getTasksWithStatus(task, oneTask);
+
+      // Completed Tasks
+      this.completedTasks(task, oneTask);
+
+      this.updateCache();
+    }
   }
 
   // Get All Tasks
@@ -59,28 +57,24 @@ class TaskManager {
     return getAllTasks;
   }
 
-  
   // Get Tasks By Status
-  getTasksWithStatus(status, oneTask) {
-    const getTaskStatus = [];
-    
-    for (let i = 0; i < this.getTask().length; i++) {
-      const taskStatus = this.getTask()[i].taskStatus;
-      if (status === "toDo") {
+  getTasksWithStatus(task, oneTask) {
+    const statusValue = task.taskStatus;
+    for (let i = 0; i < this.tasks.length; i++) {
+      if (statusValue === "toDo") {
         document.querySelector("#toDoList").appendChild(oneTask);
-      } else if (status === "inProgress") {
+      } else if (statusValue === "inProgress") {
         document.querySelector("#inProgress").appendChild(oneTask);
-      } else if (status === "review") {
+      } else if (statusValue === "review") {
         document.querySelector("#review").appendChild(oneTask);
-      } else if (status === "complete") {
+      } else if (statusValue === "complete") {
         document.querySelector("#completed").appendChild(oneTask);
+        document
+          .querySelector(`#taskDoneBtn${task.id}`)
+          .setAttribute("hidden", "");
       }
-      
-      getTaskStatus.push(taskStatus);
       this.updateCache();
     }
-    
-    return getTaskStatus;
   }
 
   // Completed Tasks
@@ -91,24 +85,23 @@ class TaskManager {
         task.taskStatus = "complete";
         document.querySelector("#completed").appendChild(oneTask);
         document
-        .querySelector(`#taskDoneBtn${task.id}`)
-        .setAttribute("hidden", "");
+          .querySelector(`#taskDoneBtn${task.id}`)
+          .setAttribute("hidden", "");
         this.updateCache();
       });
   }
-  
+
   //Delete Task!
   deleteTask(id) {
     // console.log(id);
     document
       .querySelector(`#taskDeleteBtn${id}`)
       .addEventListener("click", () => {
-        for (let i=0; i<this.tasks.length;i++){
-          if(this.tasks[i].id === id){
+        for (let i = 0; i < this.tasks.length; i++) {
+          if (this.tasks[i].id === id) {
             this.tasks.splice(i, 1);
             this.updateCache();
           }
-          
         }
         document.querySelector(`#card${id}`).remove();
       });
@@ -117,8 +110,6 @@ class TaskManager {
   // Update localStorage with current array of tasks
   updateCache() {
     localStorage.setItem("storedTasks", JSON.stringify(this.tasks));
-    // console.log("Cache has been updated!");
-    // console.log(localStorage.getItem("storedTasks"));
   }
 
   getCache() {
@@ -139,19 +130,19 @@ class TaskManager {
   }
 }
 
-function createCard(array) {
+function createCard(task) {
   const oneCard = `
-            <div class="oneTask" id="card${array.id}">
+            <div class="oneTask" id="card${task.id}">
               <div class="col">
                 <div class="card">
                   <div class="card-body">
-                    <h5 class="card-title">${array.taskName}</h5>
-                    <p class="card-text"> ${array.taskDescription}</p>
-                    <p class="card-text"><b>Assigned to:</b> ${array.taskAssign}</p>
-                    <h6 class="card-subtitle mb-2 text-muted"><b>Due Date:</b> ${array.dueDate}</h6>
-                    <p class="card-text"><b>Priority:</b> ${array.taskPriority}</p>
-                    <button type="button submit" class="btn btn-danger removeMe" id="taskDeleteBtn${array.id}"> Delete </button>
-                    <button type="button submit" class="btn btn-success " id="taskDoneBtn${array.id}"> Done </button>
+                    <h5 class="card-title">${task.taskName}</h5>
+                    <p class="card-text"> ${task.taskDescription}</p>
+                    <p class="card-text"><b>Assigned to:</b> ${task.taskAssign}</p>
+                    <h6 class="card-subtitle mb-2 text-muted"><b>Due Date:</b> ${task.dueDate}</h6>
+                    <p class="card-text"><b>Priority:</b> ${task.taskPriority}</p>
+                    <button type="button submit" class="btn btn-danger removeMe" id="taskDeleteBtn${task.id}"> Delete </button>
+                    <button type="button submit" class="btn btn-success " id="taskDoneBtn${task.id}"> Done </button>
                   </div>
                 </div>
               </div>
