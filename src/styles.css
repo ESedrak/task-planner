@@ -29,9 +29,10 @@ header span {
 }
 
 .mainSubHeader {
-  color: black;
   text-align: center;
+  padding-top: 1rem;
 }
+
 
 /* button */
 #addTaskBtn {
@@ -75,7 +76,7 @@ section {
 /* Add Task section */
 #taskFormBox,
 #addNameForm {
-  border: solid 1px rgb(254, 175, 28);
+  border: solid 1px orange;
   position: relative;
   top: 1rem;
   width: 29em;
