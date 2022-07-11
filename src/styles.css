@@ -33,7 +33,6 @@ header span {
   padding: 1rem;
 }
 
-
 /* button */
 #addTaskBtn {
   color: black;
@@ -51,44 +50,44 @@ section {
 
 #toDoList {
   border: 5px solid lightsalmon;
-  max-width: 320px  ;
+  max-width: 320px;
   background-color: whitesmoke;
 }
 
-#toDoList h4{
+#toDoList h4 {
   background-color: lightsalmon;
   color: white;
 }
 
 #inProgress {
   border: 5px solid yellowgreen;
-  max-width: 320px  ;
+  max-width: 320px;
   background-color: whitesmoke;
 }
 
-#inProgress h4{
+#inProgress h4 {
   background-color: yellowgreen;
   color: white;
 }
 
 #review {
   border: 5px solid plum;
-  max-width: 320px  ;
+  max-width: 320px;
   background-color: whitesmoke;
 }
 
-#review h4{
+#review h4 {
   background-color: plum;
   color: white;
 }
 
 #completed {
   border: 5px solid lightskyblue;
-  max-width: 320px  ;
+  max-width: 320px;
   background-color: whitesmoke;
 }
 
-#completed h4{
+#completed h4 {
   color: white;
   background-color: lightskyblue;
   padding-bottom: 1rem;
@@ -108,7 +107,7 @@ section {
 #taskFormHeader {
   text-align: center;
   color: white;
-  background-color: rgb(232, 96, 33);
+  background-color: rgb(254, 175, 28);
   padding: 1em;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
@@ -149,14 +148,15 @@ label {
 /* SuccessfulSubmit */
 #successfulSubmitMsg {
   text-align: center;
-  color: rgb(48, 192, 48);
+  font-weight: 900;
+  color: greenyellow;
   padding: 0.3em;
 }
 
 /* Success Submit */
 .successStyle {
   border-width: thick;
-  border-color: rgb(36, 166, 36);
+  border-color: greenyellow;
 }
 
 /* Error Submit */
