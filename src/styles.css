@@ -50,43 +50,43 @@ section {
 
 #toDoList {
   border: 5px solid yellow;
-  max-width: 300px;
+  max-width: 320px  ;
   background-color: whitesmoke;
 }
 
 #inProgress {
   border: 5px solid yellowgreen;
-  max-width: 300px;
+  max-width: 320px  ;
   background-color: whitesmoke;
 }
 
 #review {
   border: 5px solid plum;
-  max-width: 300px;
+  max-width: 320px  ;
   background-color: whitesmoke;
 }
 
 #completed {
   border: 5px solid blue;
-  max-width: 300px;
+  max-width: 320px  ;
   background-color: whitesmoke;
 }
 
 /* Add Task section */
 #taskFormBox,
 #addNameForm {
-  border: solid 1px orange;
+  border: solid 1px rgb(254, 175, 28);
   position: relative;
   top: 1rem;
   width: 29em;
-  background-color: orange;
+  background-color: rgb(254, 175, 28);
 }
 
 /* Header */
 #taskFormHeader {
   text-align: center;
-  color: black;
-  background-color: white;
+  color: white;
+  background-color: rgb(232, 96, 33);
   padding: 1em;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
@@ -99,7 +99,7 @@ label {
 /* Submit Form Buttons */
 #submitTaskFormBtn {
   background-color: yellowgreen;
-  border: solid 3px orange;
+  border: solid 3px rgb(254, 175, 28);
 }
 #cancelTaskFormBtn {
   background-color: #9f86c0;
@@ -113,8 +113,10 @@ label {
 
 /* One Card */
 .card {
+  max-width: 275px;
   margin: 20px auto;
   transition: 1s;
+  border: 2px solid orange;
 }
 
 .card:hover {
