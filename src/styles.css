@@ -101,11 +101,13 @@ section {
   margin: 20px auto;
   transition: 1s;
   border: 3px solid lightgrey;
+  background-color: lightyellow;
 }
 
 .card:hover {
   background-color: rgb(255, 244, 254);
   transform: scale(1.1);
+  box-shadow: 2px 5px 5px lightgrey;
 }
 
 /* Add Task Button */
@@ -172,3 +174,4 @@ section {
   font-weight: 900;
   color: rgb(245, 22, 22);
 }
+
